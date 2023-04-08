@@ -29,7 +29,7 @@ contract SimpleBank {
         balances[msg.sender] -= amount;
 
         // Transfer the amount to the user's account
-        payable(msg.sender).transfer(amount);
+        payable(msg.sender).transfer(amount); // TODO this code crashes the test?
 
         // Emit the Withdrawal event
         emit Withdrawal(msg.sender, amount);
