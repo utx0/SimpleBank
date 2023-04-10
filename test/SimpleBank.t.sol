@@ -2,6 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "forge-std/Test.sol";
+import "forge-std/console.sol";
 import "../src/SimpleBank.sol";
 
 contract SimpleBankTest is Test {
@@ -21,4 +22,9 @@ contract SimpleBankTest is Test {
         bank.withdraw(50);
         assertEq(bank.getBalance(), 50);
     }
+
+    receive() external payable {}
+//    fallback() external payable {
+//        console.log("Fallback", msg.value);
+//    }
 }
